@@ -1,30 +1,54 @@
 import { Scene } from 'phaser';
+import terrain from '../assets/tilemaps/terrain.png';
+
+// variables
+const path = [];
+const enemies = [];
+const turrets = [];
+
 
 export default class EndlessMode extends Scene{
-	// width: 800
-	// height: 600
 	constructor(){
 		super({ key: "EndlessMode" });
 	}
 
 	preload() {
-	  game.load.image('tiles', 'assets/tilemaps/terrain.png');
+	  this.load.image('mapTiles', terrain);
 	}
 
 	create() {
-	  const centerX = 800 / 2;
-	  const centerY = 600 / 2;
-		
+		// width: 800
+		// height: 600
+		var mapData = [
+							 [0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+							 [0, 0, 0, 0, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+							 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0],
+						 ];
 
+		const map = this.make.tilemap({ data: mapData, tileWidth: 30, tileHeight: 30 });
+		const tiles = map.addTilesetImage("mapTiles");
+		const layer = map.createStaticLayer(0, tiles, 0, 0);
 	}
 
 	update(){
-		console.log(menuNumber);
-		if(menuNumber === 0){
-			this.scene.start("CampaignMode");
-		}
-		else if(menuNumber === 1)
-			this.scene.start("EndlessMode");
+
 	}
 
 }

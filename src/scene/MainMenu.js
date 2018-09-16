@@ -16,9 +16,9 @@ export default class MainMenu extends Scene{
 	  const centerX = 800 / 2;
 	  const centerY = 600 / 2;
 
-	  const title = this.add.text(centerX, centerY * .8, "Tower Defense");
-	  const campaignButton = this.add.text(centerX, centerY * 1, "Campaign Mode").setInteractive();
-	  const endlessButton = this.add.text(centerX, centerY * 1.2, "Endless Mode").setInteractive();
+	  const title = this.add.text(centerX, centerY * .8, "Tower Defense").setOrigin(.5,.5);
+	  const campaignButton = this.add.text(centerX, centerY * 1, "Campaign Mode").setOrigin(.5,.5).setInteractive();
+	  const endlessButton = this.add.text(centerX, centerY * 1.2, "Endless Mode").setOrigin(.5,.5).setInteractive();
 	  // TODO this.add.image instead 
 
 	  campaignButton.on("pointerdown", function(e){
@@ -32,7 +32,6 @@ export default class MainMenu extends Scene{
 	}
 
 	update(){
-		console.log(menuNumber);
 		if(menuNumber === 0){
 			this.scene.start("CampaignMode");
 		}
