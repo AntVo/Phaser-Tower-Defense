@@ -1,21 +1,18 @@
 {
-  "name": "phaser-starter",
+  "name": "Phaser-Tower-Defense",
   "version": "3.0.0",
-  "description": "Minimal starter project to get a Phaser game environment up and running with ease.",
+  "description": "Tower defense.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oliverbenns/phaser-starter.git"
+    "url": "https://github.com/AntVo/Phaser-Tower-Defense"
   },
   "author": {
-    "name": "Oliver Benns",
-    "email": "info@oliverbenns.com",
-    "url": "https://oliverbenns.com"
+    "name": "Antoine Vo",
+    "email": "antoine.monarch@gmail.com",
+    "url": "https://antvo.github.io"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/oliverbenns/phaser-starter/issues"
-  },
-  "homepage": "https://github.com/oliverbenns/phaser-starter#readme",
+  "homepage": "https://github.com/AntVo/Phaser-Tower-Defense",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
