@@ -10,6 +10,9 @@ const config = {
   width: 800,
   height: 600,
   type: Phaser.AUTO,
+  physics: {
+      default: 'arcade'
+  },
   scene: [ MainMenu, EndlessMode ]
 };
 
