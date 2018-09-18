@@ -13,8 +13,8 @@ export default class MainMenu extends Scene{
 	}
 
 	create() {
-	  const centerX = 800 / 2;
-	  const centerY = 600 / 2;
+	  const centerX = 768 / 2;
+	  const centerY = 512 / 2;
 
 	  const title = this.add.text(centerX, centerY * .8, "Tower Defense").setOrigin(.5,.5);
 	  const campaignButton = this.add.text(centerX, centerY * 1, "Campaign Mode").setOrigin(.5,.5).setInteractive();

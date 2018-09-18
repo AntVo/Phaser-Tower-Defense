@@ -7,8 +7,8 @@ import EndlessMode from 'scene/EndlessMode';
 // This is the entry point of your game.
 
 const config = {
-  width: 800,
-  height: 600,
+  width: 768,
+  height: 512,
   type: Phaser.AUTO,
   physics: {
       default: 'arcade'
