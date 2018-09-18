@@ -1,7 +1,6 @@
 import 'phaser';
 import pkg from 'phaser/package.json';
 import introImage from 'img/study.png';
-
 import MainMenu from 'scene/MainMenu';
 import EndlessMode from 'scene/EndlessMode';
 // This is the entry point of your game.
