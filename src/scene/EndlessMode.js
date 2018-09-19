@@ -60,7 +60,7 @@ export default class EndlessMode extends Scene{
 		//Skill Tree Button
 		this.tree_button = this.add.image(32,478,'tree_button').setInteractive();
 		this.tree_button.scaleX = .08; this.tree_button.scaleY = .08;
-		this.tree_button.on('pointerdown', this.changeToTreeScene);
+		this.tree_button.on('pointerdown', this.changeToTreeScene.bind(this));
 
 		// Debugging
 	}
@@ -83,6 +83,7 @@ export default class EndlessMode extends Scene{
 		if(gameObject instanceof Tower)
 			currentlySelectedObject = gameObject;
 	}
+
 	onObjectPlace(pointer, gameObject){
 		if(gameObject instanceof Tower){
 			currentlySelectedObject = -1;
@@ -90,7 +91,7 @@ export default class EndlessMode extends Scene{
 		}
 	}
 	changeToTreeScene(){
-		console.log('changing');
+		this.scene.switch("SkillTree")
 	}
 
 }
